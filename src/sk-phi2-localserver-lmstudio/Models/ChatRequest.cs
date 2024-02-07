@@ -6,7 +6,7 @@
         {
             messages = new List<ChatMessage>();
             temperature = 0.7f;
-            max_tokens = 25;
+            max_tokens = 2500;
             stream = "false";
         }
         public List<ChatMessage> messages { get; set; }

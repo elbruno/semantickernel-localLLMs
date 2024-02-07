@@ -46,3 +46,25 @@ history.AddUserMessage("hi, who are you?");
 // print response
 var result = await chat.GetChatMessageContentsAsync(history);
 Console.WriteLine(result[^1].Content);
+
+// ADVANCED CHAT DEMO
+// // init chat
+// var chat = kernel.GetRequiredService<IChatCompletionService>();
+// var history = new ChatHistory();
+// history.AddSystemMessage("You are a useful assistant that replies with short messages.");
+// Console.WriteLine("Hint: type your question or type 'exit' to leave the conversation");
+
+// // chat loop
+// while (true)
+// {
+//     Console.Write("You: ");
+//     var input = Console.ReadLine();
+//     if (string.IsNullOrEmpty(input) || input.ToLower() == "exit")
+//         break;
+//     history.AddUserMessage(input);
+//     history = (ChatHistory)await chat.GetChatMessageContentsAsync(history);
+//     Console.WriteLine(history[^1].Content);
+//     Console.WriteLine("---");
+// }
+
+// Console.WriteLine("Goodbye!");

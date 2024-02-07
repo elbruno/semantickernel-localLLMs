@@ -20,6 +20,15 @@ This is a quickstart for sample to show how to run a SLM (small language model: 
 
 1. **🔄 Iterate quickly:** Codespaces updates the server on each save, and VS Code's debugger lets you dig into the code execution.
 
+## Configure your environment
+Before you get started, make sure you have the following requirements in place:
+- [Visual Studio Code](http://aka.ms/vscode) with extensions:
+  - [C# Extension](https://aka.ms/csharp/vscode)
+
+- [.NET 8.0 SDK](https://aka.ms/net80) for building and deploying .NET 8 projects.
+- [LM Studio](https://lmstudio.ai/) for running a server with local Large Language Models
+
+
 ## Getting Started with [LM Studio](https://lmstudio.ai/)
 
 [LM Studio](https://lmstudio.ai/) is a desktop application that allows you to run open-source models locally on your computer. You can use LM Studio to discover, download, and chat with models from Hugging Face, or create your own custom models. LM Studio also lets you run a local inference server that mimics the OpenAI API, so you can use any model with your favorite tools and frameworks. LM Studio is available for Mac, Windows, and Linux, and you can download it from their website.
@@ -83,11 +92,40 @@ Here are some additional resources related to Phi-2:
 
 ## Advanced chat demo.
 
-*Coming soon!*
+Update the file `src/sk-phi2-localserver-lmstudio/Program.cs` with the following code. This will run a small interactive chat using Phi-2 as the backend model.
+
+```csharp
+// init chat
+var chat = kernel.GetRequiredService<IChatCompletionService>();
+var history = new ChatHistory();
+history.AddSystemMessage("You are a useful assistant that replies using a funny style.You answer with short messages. Your name is Goku.");
+Console.WriteLine("Hint: type your question or type 'exit' to leave the conversation");
+
+// chat loop
+while (true)
+{
+    Console.Write("You: ");
+    var input = Console.ReadLine();
+    if (string.IsNullOrEmpty(input) || input.ToLower() == "exit")
+        break;
+    history.AddUserMessage(input);
+    history = (ChatHistory) await chat.GetChatMessageContentsAsync(history);
+    Console.WriteLine(history[^1].Content);
+    Console.WriteLine("---");
+}
+
+Console.WriteLine("Goodbye!");
+```
+
+The running app should be similar to this:
+
+![Chat complete demo](/images/40chatfulldemo.gif "Chat complete demo")
+
 
 ## Trouble shooting
 
 1. *Important**: If your codespaces can't access the localhost endpoint, you may get an error similar to this one.
+
 
     ![Codespaces can't access localhost error](/images/35Localhostnetworkerror.png "Codespaces can't access localhost error")
 
