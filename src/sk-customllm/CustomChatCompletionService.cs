@@ -1,14 +1,12 @@
-﻿using Microsoft.SemanticKernel.TextGeneration;
-using Microsoft.SemanticKernel;
-using System.Runtime.CompilerServices;
+﻿using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
 using System.Net.Http.Headers;
 using System.Text.Json;
-using SKPhi2Local.Models;
+using sk_customllm.Models;
 
-namespace SKPhi2Local.LMStudio
+namespace sk_customllm
 {
-    public class Phi2GenerationService : ITextGenerationService, IChatCompletionService
+    public class CustomChatCompletionService : IChatCompletionService
     {
         // public property for the model url endpoint
         public string ModelUrl { get; set; }
@@ -57,19 +55,5 @@ namespace SKPhi2Local.LMStudio
             throw new NotImplementedException();
         }
 
-        public IEnumerable<StreamingTextContent> GetStreamingTextContents(string prompt, PromptExecutionSettings? executionSettings = null, Kernel? kernel = null, [EnumeratorCancellation] CancellationToken cancellationToken = default)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IAsyncEnumerable<StreamingTextContent> GetStreamingTextContentsAsync(string prompt, PromptExecutionSettings? executionSettings = null, Kernel? kernel = null, CancellationToken cancellationToken = default)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IReadOnlyList<TextContent>> GetTextContentsAsync(string prompt, PromptExecutionSettings? executionSettings = null, Kernel? kernel = null, CancellationToken cancellationToken = default)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

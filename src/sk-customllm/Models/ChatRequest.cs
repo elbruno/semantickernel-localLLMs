@@ -1,4 +1,4 @@
-﻿namespace SKPhi2Local.Models
+﻿namespace sk_customllm.Models
 {
     public class ChatRequest
     {

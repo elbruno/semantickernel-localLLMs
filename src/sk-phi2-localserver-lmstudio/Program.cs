@@ -26,10 +26,10 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
-using SKPhi2Local.LMStudio;
+using sk_customllm;
 
 // Phi-2 in LM Studio
-var phi2 = new Phi2GenerationService();
+var phi2 = new CustomChatCompletionService();
 phi2.ModelUrl = "http://localhost:1234/v1/chat/completions";
 
 // semantic kernel builder

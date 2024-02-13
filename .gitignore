@@ -1,3 +1,7 @@
 src/.vs/**
 src/sk-phi2-localserver-lmstudio/obj/**
 src/sk-phi2-localserver-lmstudio/bin/**
+src/sk-customllm/bin/**
+src/sk-customllm/obj/**
+src/sk-ollama-localserver-ubuntu/bin/**
+src/sk-ollama-localserver-ubuntu/obj/**

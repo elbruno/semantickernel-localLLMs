@@ -3,6 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>sk_ollama_localserver_ubuntu</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -14,5 +15,5 @@
   <ItemGroup>
     <ProjectReference Include="..\sk-customllm\sk-customllm.csproj" />
   </ItemGroup>
-
+  
 </Project>
