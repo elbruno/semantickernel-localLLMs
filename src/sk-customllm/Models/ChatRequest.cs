@@ -7,11 +7,14 @@
             messages = new List<ChatMessage>();
             temperature = 0.7f;
             max_tokens = 2500;
-            stream = "false";
+            stream = false;
+            model = "";
         }
+        public string model { get; set; }
         public List<ChatMessage> messages { get; set; }
         public float temperature { get; set; }
         public int max_tokens { get; set; }
-        public string stream { get; set; }
+        public bool stream { get; set; }
+        
     }
 }

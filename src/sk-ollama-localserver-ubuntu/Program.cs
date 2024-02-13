@@ -3,9 +3,10 @@ using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
 using sk_customllm;
 
-// Phi-2 in LM Studio
+// llama2 in Ubuntu local in WSL
 var ollamaChat = new CustomChatCompletionService();
 ollamaChat.ModelUrl = "http://localhost:11434/v1/chat/completions";
+ollamaChat.ModelName = "llama2";
 
 // semantic kernel builder
 var builder = Kernel.CreateBuilder();

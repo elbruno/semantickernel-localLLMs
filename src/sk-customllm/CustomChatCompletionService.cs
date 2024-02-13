@@ -10,8 +10,9 @@ namespace sk_customllm
     {
         // public property for the model url endpoint
         public string ModelUrl { get; set; }
+        public string ModelName { get; set; }
 
-        public IReadOnlyDictionary<string, object?> Attributes => new Dictionary<string, object?>();
+        public IReadOnlyDictionary<string, object?> Attributes => throw new NotImplementedException();
 
         public async Task<IReadOnlyList<ChatMessageContent>> GetChatMessageContentsAsync(ChatHistory chatHistory, PromptExecutionSettings? executionSettings = null, Kernel? kernel = null, CancellationToken cancellationToken = default)
         {
@@ -28,6 +29,12 @@ namespace sk_customllm
                         msg.role = message.Role.ToString().ToLower();
                         msg.content = message.Content;
                         root.messages.Add(msg);
+                    }
+
+                    // validate if ModelName is not empty and add it to the root object
+                    if (!string.IsNullOrEmpty(ModelName))
+                    {
+                        root.model = ModelName;
                     }
 
                     // generate the json string from the root object
