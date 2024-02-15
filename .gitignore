@@ -5,3 +5,5 @@ src/sk-customllm/bin/**
 src/sk-customllm/obj/**
 src/sk-ollama-localserver-ubuntu/bin/**
 src/sk-ollama-localserver-ubuntu/obj/**
+src/sk-ollama-localserver-rpi/bin/**
+src/sk-ollama-localserver-rpi/obj/**

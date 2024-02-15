@@ -23,8 +23,9 @@ namespace sk_customllm
 
                     // iterate though chatHistory and generate a json document based on the Root class
                     var root = new ChatRequest();
-                    foreach (var message in chatHistory)
+                    for (int i = 0; i < chatHistory.Count; i++)
                     {
+                        var message = chatHistory[i];
                         var msg = new ChatMessage();
                         msg.role = message.Role.ToString().ToLower();
                         msg.content = message.Content;
