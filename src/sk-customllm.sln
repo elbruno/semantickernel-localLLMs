@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sk-ollama-localserver-ubunt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sk-customllm", "sk-customllm\sk-customllm.csproj", "{29F02940-CAA3-4DF1-9DA2-7EA71A443AE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sk-ollama-localserver-rpi", "sk-ollama-localserver-rpi\sk-ollama-localserver-rpi.csproj", "{7757F5B5-4980-4423-BF94-3994F03F2C9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sk-ollama-localserver-rpi", "sk-ollama-localserver-rpi\sk-ollama-localserver-rpi.csproj", "{7757F5B5-4980-4423-BF94-3994F03F2C9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sk-ollamacsharp", "sk-ollamacsharp\sk-ollamacsharp.csproj", "{647242A7-82DE-47C3-8004-892D4A0EBF16}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{7757F5B5-4980-4423-BF94-3994F03F2C9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7757F5B5-4980-4423-BF94-3994F03F2C9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7757F5B5-4980-4423-BF94-3994F03F2C9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{647242A7-82DE-47C3-8004-892D4A0EBF16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{647242A7-82DE-47C3-8004-892D4A0EBF16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{647242A7-82DE-47C3-8004-892D4A0EBF16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{647242A7-82DE-47C3-8004-892D4A0EBF16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

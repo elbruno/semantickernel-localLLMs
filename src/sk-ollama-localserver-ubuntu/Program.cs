@@ -26,10 +26,10 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
-using sk_customllm;
+using sk_ollamacsharp;
 
 // llama2 in Ubuntu local in WSL
-var ollamaChat = new CustomChatCompletionService();
+var ollamaChat = new OllamaChatCompletionService();
 ollamaChat.ModelUrl = "http://localhost:11434/v1/chat/completions";
 ollamaChat.ModelName = "llama2";
 
