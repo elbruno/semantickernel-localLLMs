@@ -26,17 +26,28 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
+using Microsoft.SemanticKernel.TextGeneration;
 using sk_ollamacsharp;
 
 // llama2 in Ubuntu local in WSL
 var ollamaChat = new OllamaChatCompletionService();
-ollamaChat.ModelUrl = "http://localhost:11434/v1/chat/completions";
+ollamaChat.ModelUrl = "http://localhost:11434";
 ollamaChat.ModelName = "llama2";
+
+var ollamaText = new OllamaTextGenerationService();
+ollamaText.ModelUrl = "http://localhost:11434";
+ollamaText.ModelName = "llama2";
 
 // semantic kernel builder
 var builder = Kernel.CreateBuilder();
 builder.Services.AddKeyedSingleton<IChatCompletionService>("ollamaChat", ollamaChat);
+builder.Services.AddKeyedSingleton<ITextGenerationService>("ollamaText", ollamaText);
 var kernel = builder.Build();
+
+// init text generation
+var textGen = kernel.GetRequiredService<ITextGenerationService>();
+var response = textGen.GetTextContentsAsync("The weather in January in Toronto is usually ").Result;
+Console.WriteLine(response[^1].Text);
 
 // init chat
 var chat = kernel.GetRequiredService<IChatCompletionService>();
