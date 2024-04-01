@@ -44,12 +44,18 @@ builder.Services.AddKeyedSingleton<IChatCompletionService>("ollamaChat", ollamaC
 builder.Services.AddKeyedSingleton<ITextGenerationService>("ollamaText", ollamaText);
 var kernel = builder.Build();
 
-// init text generation
+// text generation
+Console.WriteLine("====================");
+Console.WriteLine("TEXT GENERATION DEMO");
+Console.WriteLine("====================");
 var textGen = kernel.GetRequiredService<ITextGenerationService>();
 var response = textGen.GetTextContentsAsync("The weather in January in Toronto is usually ").Result;
 Console.WriteLine(response[^1].Text);
 
-// init chat
+// chat
+Console.WriteLine("====================");
+Console.WriteLine("CHAT COMPLETION DEMO");
+Console.WriteLine("====================");
 var chat = kernel.GetRequiredService<IChatCompletionService>();
 var history = new ChatHistory();
 history.AddSystemMessage("You are a useful assistant that replies using a funny style and emojis. Your name is Goku.");

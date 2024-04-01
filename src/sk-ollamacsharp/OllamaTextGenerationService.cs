@@ -1,7 +1,7 @@
 ﻿//    Copyright (c) 2024
 //    Author      : Bruno Capuano
 //    Change Log  :
-//    - Sample Chat Completion Service for Ollama models
+//    - Sample Text Generation Service for Ollama models
 //
 //    The MIT License (MIT)
 //
